@@ -1,63 +1,28 @@
-var a;
-var b;
+var firstNumber;
+var nextNumber;
 var toSquish = [];
-var squish2 = [];
 var operand;
-var secondNumber = false;
+var operandPressed = false;
+var finalArray = [];
 
-// find 1st number
-// how to do with more than one digit? hmmmmmmmmmmmm
+// bleep bloop 
 
-$(".num").click(function(){ 
-  if (secondNumber) {
-    squish2.push($(this).html());
-    console.log(squish2);
-  }
-  else {
-    toSquish.push($(this).html());
-    console.log(toSquish);
-  }
+$(".num").click(function(){
+  toSquish.push(($this).html());
+  console.log(toSquish);
 })
 
-// assign operand value to var operand
 $(".operand").click(function(){
-  var operand = $(this).html();
-  var a = parseInt(toSquish.join(''));
-  var secondNumber = true;
-  ///
-  console.log(operand);
-  console.log(a);
-})
+  var operand = $($this).html;
+  var firstNum = parseFloat(toSquish.join('')); 
+  finalArray.push(firstNum);
+  var operandPushed = true;
+});
+// on operand click
+// parsefloat num
+// push to final array
 
- // how to differentiate between a and b? toggle switch?
-// on equal-sign click: if operand is _, call ___ function and push result to screen div
-$(".equal").click(function(){
-  var b = parseInt(squish2.join(''));
-  var a = parseInt(toSquish.join(''));
-  var a;
-  var secondNumber = false;
-  if (operand === "+"){
-    var finalSum = add(a,b);
-    console.log(finalSum);
-  }
-  else if (operand === "–"){
-    var finalSum =subtract(a, b);
-    console.log(finalSum);
-  }
-  else if (operand === "×") {
-    var finalSum = multiply(a,b);
-    console.log(finalSum);
-  }
-  else if (operand ==="÷") {
-    var finalSum = multiply(a,b);
-    console.log(finalSum);
-  }
-})
-// on equal-sign click: if operand is _, call ___ function and push result to screen div
-
-// and so on 
-
-//-- operand functions --//
+/////////// functions
 
 function add(a, b) {
   return a + b;
@@ -74,3 +39,10 @@ function multiply(a, b) {
 function divide(a, b) {
   return a/b;
 }
+
+// input
+// select which operator
+// evaluate equation
+
+// previous input -> current input
+// previous input +
