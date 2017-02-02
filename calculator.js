@@ -1,26 +1,22 @@
-var firstNumber;
-var nextNumber;
+var firstNumber = 0;
+var nextNumber = 0;
 var toSquish = [];
 var operand;
 var operandPressed = false;
-var finalArray = [];
 
-// bleep bloop 
+var digit = document.getElementsByClassName("num");
+var operand = document.getElementsByClassName("operand");
 
-$(".num").click(function(){
-  toSquish.push(($this).html());
-  console.log(toSquish);
-})
+// log digit
+function logIt(){
+  console.log("you pushed me dude");
+}
 
-$(".operand").click(function(){
-  var operand = $($this).html;
-  var firstNum = parseFloat(toSquish.join('')); 
-  finalArray.push(firstNum);
-  var operandPushed = true;
-});
-// on operand click
-// parsefloat num
-// push to final array
+for (var i = 0; i < digit.length; i++){
+  digit[i].onclick = logIt;
+}
+
+// log operand 
 
 /////////// functions
 
@@ -39,10 +35,3 @@ function multiply(a, b) {
 function divide(a, b) {
   return a/b;
 }
-
-// input
-// select which operator
-// evaluate equation
-
-// previous input -> current input
-// previous input +
