@@ -16,6 +16,15 @@
   font-size: 20px;
 }
 
+.extra-padding {
+  padding-left: 11px;
+  padding-right: 12px;
+}
+
+.zero {
+  padding-left: 12px;
+}
+
 .button:hover {
   color: white;
   -webkit-text-stroke: 1px black;
@@ -30,5 +39,12 @@
 
 .final-data {
   padding-top: 4px;
-  padding-right: 23px;
+  padding-right: 22px;
+}
+
+#clear {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid black;
 }
