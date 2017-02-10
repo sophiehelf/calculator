@@ -9,11 +9,6 @@ var digit = document.getElementsByClassName("num");
 
 var operand = document.getElementsByClassName("operand");
 
-var plus = document.getElementById("plus");
-var minus = document.getElementById("minus");
-var times = document.getElementById("times");
-var divide = document.getElementById("divide");
-
 
 // log digit + push to array
 
@@ -35,10 +30,12 @@ function condense(){
   var number = parseFloat(toSquish.join(''));
   console.log(number);
   toCompute.push(number);
+  console.log(toCompute);
   toSquish = [];
-  console.log(toSquish);
-  
+  operandClicked = this.innerHTML
+  console.log(operandClicked);
   operandPushes++;
+  console.log(operandPushes);
 }
 
 for (var i = 0; i < operand.length; i++) {
@@ -46,9 +43,30 @@ for (var i = 0; i < operand.length; i++) {
 }
 
 // computational stuff innit
-
-
-
+function arithmetic(){
+switch(operandClicked) {
+  case "+":
+    toCompute.reduce(function(a,b){
+      return a+b;
+    })
+    break;
+  case "-":
+    toCompute.reduce(function(a,b){
+      return a-b;
+    })
+    break;
+  case "x":
+    toCompute.reduce(function(a,b){
+      return a*b;
+    })
+    break;
+  case "÷":
+    toCompute.reduce(function(a,b){
+      return a/b;
+    })
+    break;
+                     }
+}
 //// begin the while loop binches 
 
 while (toCompute.length > 0) {
