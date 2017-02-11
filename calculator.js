@@ -6,7 +6,6 @@ var operandClicked;
 var operandPushes = 0;
 
 var digit = document.getElementsByClassName("num");
-
 var operand = document.getElementsByClassName("operand");
 
 
@@ -32,8 +31,16 @@ function condense(){
   toCompute.push(number);
   console.log(toCompute);
   toSquish = [];
+  operandLog();
+  operandCountPlus();
+}
+
+function operandLog() {
   operandClicked = this.innerHTML
   console.log(operandClicked);
+}
+
+function operandCountPlus() {
   operandPushes++;
   console.log(operandPushes);
 }
@@ -43,7 +50,7 @@ for (var i = 0; i < operand.length; i++) {
 }
 
 // computational stuff innit
-function arithmetic(){
+function arithmetic(a,b){
 switch(operandClicked) {
   case "+":
     toCompute.reduce(function(a,b){
@@ -71,6 +78,12 @@ switch(operandClicked) {
 
 while (toCompute.length > 0) {
   if (operandPushes > 1) {
+    var result = arithmetic();
+    console.log(result);
+    toCompute = [result];
+    operandPushes++
+  }
+  else {
     
   }
 }
