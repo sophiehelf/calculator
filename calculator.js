@@ -3,11 +3,11 @@
 var toSquish = [];
 var toCompute = [];
 var answer = 0;
-var operandClicked;
 var operandPushes = 0;
 
 var digit = document.getElementsByClassName("num");
 var operand = document.getElementsByClassName("operand");
+var clear = document.getElementById("clear");
 
 
 // loops
@@ -22,6 +22,10 @@ for (var i = 0; i < digit.length; i++){
 
 
 // onclick functions
+
+function clearCalculator(){
+  toCompute = [];
+}
 
 function logIt(){
   var digitToPush = this.innerText;
@@ -49,28 +53,31 @@ function condense(){
   }
 }
 
-function clearComputeArray(){
-  toCompute = [];
-}
-
 
 /// arithmetic functions
 
 function arithmetic() {
   if(operandClicked == "+"){
-    answer = toCompute[0] + tocompute[1];
+    answer = toCompute[toCompute.length-2] + tocompute[toCompute.length-1];
     console.log(answer);
+    console.log(toCompute);
   }
   else if(operandClicked == "-"){
-    answer = toCompute[0] - toCompute[1];
+    answer = toCompute[toCompute.length-2] - toCompute[toCompute.length-1];
     console.log(answer);
+    console.log(toCompute);
   }
   else if (operandClicked == "x") {
-    answer = toCompute[0] * toCompute[1];
+    answer = toCompute[toCompute.length-2] * toCompute[toCompute.length-1];
     console.log(answer);
+    console.log(toCompute);
   }
   else if (operandClicked == "÷") {
-    answer = toCompute[0] / toCompute[1];
+    answer = toCompute[toCompute.length-2] / toCompute[toCompute.length-1];
     console.log(answer);
+    console.log(toCompute);
+  }
+  else if (operandClicked === "="){
+    toCompute = [0];
   }
 }
